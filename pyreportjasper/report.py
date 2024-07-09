@@ -369,7 +369,8 @@ class Report:
         output_stream_pdf = self.get_output_stream_pdf()
         output_stream_pdf.writeTo(output_stream)
         output_stream_pdf.flush() # if no buffer used, it can be ignored.
-        output_stream_pdf.close()       
+        output_stream_pdf.close()
+        output_stream.close() # I closed output_stream    
 
     def export_html(self):
         exporter = self.HtmlExporter()
